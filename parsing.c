@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2025/01/14 09:49:57 by zamohame          #+#    #+#             */
-/*   Updated: 2025/02/10 11:52:02 by zamohame         ###   ########.fr       */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 15:22:16 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/04 13:45:02 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		count_arg(char **array)
+int	count_arg(char **array)
 {
 	int	i;
 
@@ -25,9 +22,9 @@ int		count_arg(char **array)
 	return (i);
 }
 
-int 	has_duplicate(char **argv) 
+int	has_duplicate(char **argv)
 {
-    int	i;
+	int	i;
 	int	j;
 	int	len;
 
@@ -47,21 +44,21 @@ int 	has_duplicate(char **argv)
 	return (0);
 }
 
-int 	is_sorted(t_stack **stack) 
+int	is_sorted(t_stack **stack)
 {
-    t_stack *current;
-    
+	t_stack	*current;
+
 	current = *stack;
-    while (current && current->next) 
+	while (current && current->next)
 	{
-        if (current->index > current->next->index)
-            return (0);
-        current = current->next;
-    }
-    return (1);
+		if (current->index > current->next->index)
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }
 
-int		is_number(char *str)
+int	is_number(char *str)
 {
 	if (*str == '-' || *str == '+')
 		str++;
@@ -89,15 +86,21 @@ void	handle_input(int argc, char **argv)
 		array = argv + 1;
 	while (array[i])
 	{
+		if (!is_number(array[i]))
+			exit(EXIT_FAILURE);
 		tmp_argv = ft_atoi(array[i]);
 		if (tmp_argv < INT_MIN || tmp_argv > INT_MAX)
+		{
 			handle_error();
-		if (has_duplicate(array))
-			handle_error();
-		if (!is_number(array[i]))
-			handle_error();
+			exit(EXIT_FAILURE);
+		}
 		i++;
+		if (has_duplicate(array))
+		{
+			handle_error();
+			exit(EXIT_FAILURE);
+		}
 	}
 	if (argc == 2)
-		free_array (array);
+		free_array(array);
 }

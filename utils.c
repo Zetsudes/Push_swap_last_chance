@@ -1,42 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 15:21:34 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/03 16:15:15 by zamohame         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-
-int		handle_error(void)
+int	handle_error(void)
 {
 	write(2, "Error\n", 6);
 	return (1);
 }
 
-void    free_array(char **array) 
+void	free_array(char **array)
 {
-    int     i;
-     
-    i = 0;
-    if (!array)
-        return;
-    while (array[i]) {
-        free(array[i]);
-        i++;
-    }
-    free(array);
+	int	i;
+
+	i = 0;
+	if (!array)
+		return ;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }
 
-void free_stack(t_stack **stack) 
+void	free_stack(t_stack **stack)
 {
-    t_stack *tmp;
+	t_stack	*tmp;
 
-    while (*stack) 
-    {
-        tmp = *stack;
-        *stack = (*stack)->next;
-        free(tmp);
-    }
+	while (*stack)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp);
+	}
 }
 
-int		find_max_index(t_stack *stack)
+int	find_max_index(t_stack *stack)
 {
 	int		max;
-	t_stack		*tmp;
+	t_stack	*tmp;
 
 	max = INT_MIN;
 	tmp = stack;
@@ -49,9 +61,9 @@ int		find_max_index(t_stack *stack)
 	return (max);
 }
 
-int		find_bits(int max_number)
+int	find_bits(int max_number)
 {
-	int		max_bits;
+	int	max_bits;
 
 	max_bits = 0;
 	while (max_number > 0)

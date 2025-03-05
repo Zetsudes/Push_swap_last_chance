@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils_bis.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2025/01/24 14:05:49 by zamohame          #+#    #+#             */
-/*   Updated: 2025/01/30 11:38:19 by zamohame         ###   ########.fr       */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/03 15:21:42 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/03 15:21:50 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack		*init_stack(int argc, char **argv)
+t_stack	*init_stack(int argc, char **argv)
 {
-	t_stack		*a;
+	t_stack	*a;
 	char	**tmp;
 	int		i;
 
@@ -51,8 +48,7 @@ void	set_index(t_stack *stack, int size)
 		tmp = stack;
 		while (tmp)
 		{
-			if (!tmp->index && (max == NULL
-					|| tmp->value > max->value))
+			if (!tmp->index && (max == NULL || tmp->value > max->value))
 				max = tmp;
 			tmp = tmp->next;
 		}
@@ -61,9 +57,9 @@ void	set_index(t_stack *stack, int size)
 	}
 }
 
-t_stack		*new_node(int new)
+t_stack	*new_node(int new)
 {
-	t_stack		*node;
+	t_stack	*node;
 
 	node = ft_calloc(1, sizeof(t_stack));
 	if (!node)
@@ -91,9 +87,9 @@ void	insert_node(t_stack **head, int new)
 	current->next = node;
 }
 
-int		stack_size(t_stack *head)
+int	stack_size(t_stack *head)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (head != NULL)
