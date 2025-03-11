@@ -28,7 +28,7 @@
 
 typedef struct s_stack
 {
-	int				value;
+	long			value;
 	int				index;
 	struct s_stack	*next;
 }					t_stack;
@@ -79,4 +79,5 @@ int					get_pos(t_stack *stack, int target_index);
 int					get_max_index(t_stack *stack);
 void				push_back(t_stack **a, t_stack **b);
 void				push_a_bit(t_stack **a, t_stack **b);
+
 #endif

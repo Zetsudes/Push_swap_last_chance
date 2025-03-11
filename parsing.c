@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:22:16 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/04 13:45:02 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/11 16:54:27 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	handle_input(int argc, char **argv)
 	{
 		if (!is_number(array[i]))
 			exit(EXIT_FAILURE);
-		tmp_argv = ft_atoi(array[i]);
+		tmp_argv = long_atoi(array[i]);
 		if (tmp_argv < INT_MIN || tmp_argv > INT_MAX)
 		{
 			handle_error();

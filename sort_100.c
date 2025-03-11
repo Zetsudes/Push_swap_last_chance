@@ -6,11 +6,44 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:21:16 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/03 15:21:21 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:00:15 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_max_index(t_stack *stack)
+{
+	int		max;
+	t_stack	*tmp;
+
+	max = -1;
+	tmp = stack;
+	while (tmp)
+	{
+		if (tmp->index > max)
+			max = tmp->index;
+		tmp = tmp->next;
+	}
+	return (max);
+}
+
+int	get_pos(t_stack *stack, int target_index)
+{
+	int		pos;
+	t_stack	*tmp;
+
+	tmp = stack;
+	pos = 0;
+	while (tmp)
+	{
+		if (tmp->index == target_index)
+			return (pos);
+		pos++;
+		tmp = tmp->next;
+	}
+	return (-1);
+}
 
 void	push_a_bit(t_stack **a, t_stack **b)
 {
@@ -60,37 +93,4 @@ void	push_back(t_stack **a, t_stack **b)
 		}
 		push_to_a(b, a);
 	}
-}
-
-int	get_max_index(t_stack *stack)
-{
-	int		max;
-	t_stack	*tmp;
-
-	max = -1;
-	tmp = stack;
-	while (tmp)
-	{
-		if (tmp->index > max)
-			max = tmp->index;
-		tmp = tmp->next;
-	}
-	return (max);
-}
-
-int	get_pos(t_stack *stack, int target_index)
-{
-	int pos;
-	t_stack *tmp;
-
-	tmp = stack;
-	pos = 0;
-	while (tmp)
-	{
-		if (tmp->index == target_index)
-			return (pos);
-		pos++;
-		tmp = tmp->next;
-	}
-	return (-1);
 }
