@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:21:42 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/03 15:21:50 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/13 10:55:08 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void	insert_node(t_stack **head, int new)
 
 int	stack_size(t_stack *head)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (head != NULL)

@@ -2,19 +2,15 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2025/01/14 09:49:14 by zamohame          #+#    #+#             */
-/*   Updated: 2025/02/10 11:24:00 by zamohame         ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/13 11:17:42 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/13 11:17:49 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	rotate(t_stack **stack)
 {
@@ -29,6 +25,7 @@ void	rotate(t_stack **stack)
 	*stack = (*stack)->next;
 	tail->next->next = NULL;
 }
+
 void	rotate_a(t_stack **a)
 {
 	rotate(a);

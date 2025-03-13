@@ -6,7 +6,7 @@
 #    By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/14 09:48:42 by zamohame          #+#    #+#              #
-#    Updated: 2025/02/10 10:44:23 by zamohame         ###   ########.fr        #
+#    Updated: 2025/03/13 11:12:52 by zamohame         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC = push_swap.c \
       rotate.c \
       reverse_rotate.c \
 	  sort_100.c \
+	  handle_input.c \
 
 OBJ = $(SRC:.c=.o)
 NAME = push_swap

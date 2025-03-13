@@ -2,14 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-		+:+     */
-/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+
-		+#+        */
-/*                                                +#+#+#+#+#+
-		+#+           */
-/*   Created: 2025/01/14 09:49:40 by zamohame          #+#    #+#             */
-/*   Updated: 2025/02/10 11:14:40 by zamohame         ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/13 11:18:08 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/13 11:29:38 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +76,9 @@ int					get_pos(t_stack *stack, int target_index);
 int					get_max_index(t_stack *stack);
 void				push_back(t_stack **a, t_stack **b);
 void				push_a_bit(t_stack **a, t_stack **b);
+
+char				**initialize_array(int argc, char **argv);
+long				long_atoi(const char *str);
+void				validate_input(char **array);
 
 #endif

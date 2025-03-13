@@ -2,19 +2,15 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+
-	+:+     */
-/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+
-	+#+        */
-/*                                                +#+#+#+#+#+
-	+#+           */
-/*   Created: 2025/01/14 09:49:03 by zamohame          #+#    #+#             */
-/*   Updated: 2025/02/10 11:24:26 by zamohame         ###   ########.fr       */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/13 11:17:23 by zamohame          #+#    #+#             */
+/*   Updated: 2025/03/13 11:17:29 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 void	swap(t_stack **stack)
 {

@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:22:16 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/11 16:54:27 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/13 11:15:42 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,32 +75,10 @@ int	is_number(char *str)
 
 void	handle_input(int argc, char **argv)
 {
-	int		i;
-	long	tmp_argv;
 	char	**array;
 
-	i = 0;
-	if (argc == 2)
-		array = ft_split(argv[1], ' ');
-	else
-		array = argv + 1;
-	while (array[i])
-	{
-		if (!is_number(array[i]))
-			exit(EXIT_FAILURE);
-		tmp_argv = long_atoi(array[i]);
-		if (tmp_argv < INT_MIN || tmp_argv > INT_MAX)
-		{
-			handle_error();
-			exit(EXIT_FAILURE);
-		}
-		i++;
-		if (has_duplicate(array))
-		{
-			handle_error();
-			exit(EXIT_FAILURE);
-		}
-	}
+	array = initialize_array(argc, argv);
+	validate_input(array);
 	if (argc == 2)
 		free_array(array);
 }

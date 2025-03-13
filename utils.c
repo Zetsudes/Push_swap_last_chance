@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:21:34 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/03 16:15:15 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/13 11:38:50 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	handle_error(void)
 {
 	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 	return (1);
 }
 
