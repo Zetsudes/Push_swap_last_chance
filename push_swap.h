@@ -6,14 +6,14 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/13 11:18:08 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/13 11:29:38 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/14 10:43:31 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../greg_lib/libft.h"
+# include "greg_lib/libft.h"
 # include <limits.h>
 # include <math.h>
 # include <stdio.h>

@@ -3,52 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+         #
+#    By: zamohame <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/14 09:48:42 by zamohame          #+#    #+#              #
-#    Updated: 2025/03/17 11:25:15 by zamohame         ###   ########.fr        #
+#    Created: 2024/11/15 20:50:09 by zamohame          #+#    #+#              #
+#    Updated: 2024/11/15 20:59:52 by zamohame         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-LIBFT_DIR = greg_lib
-
-LIBFT = $(LIBFT_DIR)/libft.a
-
 CC = gcc
-CFLAGS = -g -Wall -Wextra -Werror -fPIE
+CFLAGS = -Wall -Wextra -Werror 
+AR = ar
 
-SRC = push_swap.c \
-      parsing.c \
-	  stack.c \
-	  utils.c \
-	  sort.c \
-      push.c \
-      swap.c \
-      rotate.c \
-      reverse_rotate.c \
-	  sort_100.c \
-	  handle_input.c \
+SRC = ft_printf.c \
+	handle_char.c \
+	handle_hex.c \
+	handle_number.c \
+	handle_percent.c \
+	handle_pointer.c \
+	handle_string.c \
+	handle_unsigned.c \
 
 OBJ = $(SRC:.c=.o)
-NAME = push_swap
+
+NAME = libftprintf.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) $(LIBFT)
-
-$(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+$(NAME): $(OBJ)
+	$(AR) -r $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) -c $(CFLAGS) $<
 
 clean:
-	$(MAKE) clean -C $(LIBFT_DIR)
 	rm -f $(OBJ)
 
-fclean: clean
-	$(MAKE) fclean -C $(LIBFT_DIR)
+fclean: clean 
 	rm -f $(NAME)
 
 re: fclean all
