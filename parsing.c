@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/03 15:22:16 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/13 11:15:42 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/03/31 13:24:06 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,4 @@ int	is_number(char *str)
 		str++;
 	}
 	return (1);
-}
-
-void	handle_input(int argc, char **argv)
-{
-	char	**array;
-
-	array = initialize_array(argc, argv);
-	validate_input(array);
-	if (argc == 2)
-		free_array(array);
 }
