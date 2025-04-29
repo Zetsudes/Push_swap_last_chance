@@ -6,7 +6,7 @@
 /*   By: zamohame <zamohame@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:19:14 by zamohame          #+#    #+#             */
-/*   Updated: 2025/03/13 14:18:09 by zamohame         ###   ########.fr       */
+/*   Updated: 2025/04/29 17:14:25 by zamohame         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*get_next_line(int fd);
 char	*save_remainder(char *buffer);
 char	*extract_line(char *buffer);
 int		handle_line(int fd, char **buffer, char *temp);
+char	*free_buffer(char *buffer);
 
 #endif
